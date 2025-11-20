@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact &amp; Booking – Ethan Hardman Audio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="frame">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a href="index.html" class="brand">
+            <div class="brand-logo-wrap">
+              <img
+                src="assets/logo-ethan-hardman-audio.png"
+                alt="Ethan Hardman Audio logo"
+                class="brand-logo"
+              />
+            </div>
+            <div class="brand-text">
+              <div class="brand-title">ETHAN HARDMAN</div>
+              <div class="brand-subtitle">Audio Engineer &amp; Music Producer</div>
+            </div>
+          </a>
+
+          <nav class="nav-links" aria-label="Main navigation">
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html" style="color: var(--text);">Contact</a>
+            <button
+              class="nav-cta"
+              onclick="window.open('https://www.fiverr.com/YOUR_FIVERR_HANDLE','_blank')"
+            >
+              <span class="icon">⚡</span>
+              <span>Book on Fiverr</span>
+            </button>
+          </nav>
+
+          <button
+            class="nav-toggle"
+            aria-label="Toggle navigation"
+            onclick="toggleMobileNav()"
+          >
+            <div class="nav-toggle-bar"></div>
+          </button>
+        </div>
+        <nav
+          class="nav-links-mobile"
+          id="mobileNav"
+          aria-label="Mobile navigation"
+        >
+          <a href="services.html" onclick="toggleMobileNav(false)">Services</a>
+          <a href="portfolio.html" onclick="toggleMobileNav(false)">Portfolio</a>
+          <a
+            href="contact.html"
+            class="active"
+            onclick="toggleMobileNav(false)"
+            >Contact</a
+          >
+          <a
+            href="https://www.fiverr.com/YOUR_FIVERR_HANDLE"
+            target="_blank"
+            rel="noreferrer"
+            onclick="toggleMobileNav(false)"
+          >
+            Book on Fiverr
+          </a>
+        </nav>
+      </header>
+
+      <section>
+        <div class="section-label">Contact</div>
+        <h1 class="section-title">Let’s talk about your project</h1>
+        <p class="section-intro">
+          There are two main ways to work with me: Fiverr for paid projects, and
+          email for free/portfolio-building work or general questions. Choose
+          whichever matches where you’re at.
+        </p>
+      </section>
+
+      <section>
+        <div class="contact-layout">
+          <article class="card reveal">
+            <h2 style="font-size: 1rem; margin-bottom: 6px;">
+              1 · Paid projects via Fiverr
+            </h2>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 10px;">
+              Fiverr handles all payments, messaging and file delivery in one place.
+              You’ll see exactly what you’re getting – price, number of revisions,
+              delivery time and add-ons – before you book.
+            </p>
+
+            <button
+              class="btn btn-primary"
+              onclick="window.open('https://www.fiverr.com/YOUR_FIVERR_HANDLE','_blank')"
+            >
+              Go to my Fiverr profile
+              <span>↗</span>
+            </button>
+
+            <p class="contact-note">
+              As soon as my gig is live, this button will take you straight to it.
+              Feel free to email me in the meantime if you’d like to plan ahead.
+            </p>
+
+            <div class="social-row">
+              <div class="social-pill">
+                📸 <a href="https://instagram.com/ethanhaudio" target="_blank" rel="noreferrer">@ethanhaudio</a>
+              </div>
+              <div class="social-pill">
+                🎵 <a href="https://soundcloud.com/ethanhaudio" target="_blank" rel="noreferrer">SoundCloud</a>
+              </div>
+              <div class="social-pill">
+                ▶️ <a href="https://youtube.com/@ethanhaudio" target="_blank" rel="noreferrer">YouTube</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-soft reveal">
+            <h2 style="font-size: 1rem; margin-bottom: 6px;">
+              2 · Email for portfolio &amp; questions
+            </h2>
+            <p style="font-size: 0.9rem; color: var(--muted);">
+              For free/portfolio-building work, ideas you’re unsure about or
+              anything that doesn’t fit neatly into a Fiverr gig, email is best.
+              Include a demo link and a short description of what you’re aiming
+              for.
+            </p>
+            <!-- Simple mailto form -->
+            <form
+              method="post"
+              action="mailto:contact.ethanhardmanaudio@gmail.com"
+              enctype="text/plain"
+            >
+              <div class="form-row-inline">
+                <div>
+                  <label for="name">Name</label>
+                  <input id="name" name="Name" type="text" placeholder="Your name" required />
+                </div>
+                <div>
+                  <label for="email">Email</label>
+                  <input
+                    id="email"
+                    name="Email"
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-row-inline">
+                <div>
+                  <label for="projectType">Project type</label>
+                  <select id="projectType" name="Project type">
+                    <option value="Single">Single · 1 track</option>
+                    <option value="EP">EP · 2–5 tracks</option>
+                    <option value="Album">Album · 6+ tracks</option>
+                    <option value="Live">Live performance / band</option>
+                    <option value="Other">Other / not sure yet</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="services">Services</label>
+                  <select id="services" name="Services">
+                    <option value="Mixing + Mastering">Mixing + Mastering</option>
+                    <option value="Mixing only">Mixing only</option>
+                    <option value="Mastering only">Mastering only</option>
+                    <option value="Vocal work">Vocal tuning / timing</option>
+                    <option value="Production support">Production support</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="link">Track link</label>
+                <input
+                  id="link"
+                  name="Track link"
+                  type="url"
+                  placeholder="Private link (Drive, Dropbox, SoundCloud…)"
+                />
+              </div>
+
+              <div>
+                <label for="message">Project details</label>
+                <textarea
+                  id="message"
+                  name="Message"
+                  placeholder="Tell me about the project, references and any deadlines…"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-secondary">
+                Open email with this info
+              </button>
+
+              <p class="contact-note">
+                If the button doesn’t open your mail app properly, you can email
+                me directly at
+                <strong>contact.ethanhardmanaudio@gmail.com</strong>
+                with the same details.
+              </p>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div>© <span id="year"></span> Ethan Hardman Audio.</div>
+        <div class="footer-right">
+          Paid work via Fiverr · portfolio projects via email.
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
