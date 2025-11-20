@@ -1,6 +1,8 @@
 /* ================= ROOT & GLOBAL ================= */
 
 :root {
+  --header-height: 72px;
+
   --bg-body: #020207;
   --bg-elevated: #05050b;
   --bg-elevated-soft: #0b0b12;
@@ -32,7 +34,6 @@
 html,
 body {
   height: 100%;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -44,6 +45,19 @@ body {
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
 }
+
+/* Scroll snapping for full-screen sections on desktop */
+#main {
+  scroll-snap-type: y mandatory;
+}
+.section-block {
+  scroll-snap-align: start;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+}
+
+/* containers & section layout */
 
 img {
   display: block;
@@ -60,19 +74,10 @@ button {
   font: inherit;
 }
 
-/* Containers & sections */
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-/* Each main section fills (or almost fills) the screen */
-.section-block {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
 }
 
 .section {
@@ -114,29 +119,8 @@ button {
   color: var(--text-muted);
 }
 
-/* Overview vs full sections */
-
-.section-body.overview {
+.section-body {
   font-size: 1rem;
-  color: var(--text-muted);
-}
-
-.section-body.overview p {
-  margin-bottom: 10px;
-}
-
-.overview-list {
-  list-style: none;
-  font-size: 0.98rem;
-  color: rgba(229, 231, 235, 0.9);
-}
-
-.overview-list li {
-  margin-bottom: 6px;
-}
-
-.section-body.full {
-  margin-top: 26px;
 }
 
 .section-actions {
@@ -151,6 +135,9 @@ button {
   position: sticky;
   top: 0;
   z-index: 50;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
   backdrop-filter: blur(24px);
   background: linear-gradient(
       to bottom,
@@ -165,7 +152,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
+  width: 100%;
 }
 
 .nav-brand {
@@ -284,8 +271,6 @@ button {
 
 .hero {
   position: relative;
-  display: flex;
-  align-items: center;
   padding: 48px 0 72px;
   overflow: hidden;
 }
@@ -736,6 +721,10 @@ audio {
 @media (max-width: 960px) {
   body {
     font-size: 16px;
+  }
+
+  #main {
+    scroll-snap-type: none;
   }
 
   .section-block {
