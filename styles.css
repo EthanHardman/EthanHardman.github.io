@@ -31,12 +31,9 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at top left, #24104f 0, transparent 55%),
-    radial-gradient(circle at bottom right, #0a3d62 0, transparent 55%),
-    var(--bg);
+  background: linear-gradient(145deg, #050510 0%, #171032 40%, #050510 100%);
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -57,7 +54,7 @@ a {
    ========== */
 
 .page {
-  max-width: 1120px;
+ max-width: 1400px;
   margin: 0 auto;
   padding: 18px 16px 40px;
 }
@@ -311,12 +308,12 @@ a {
    ========== */
 
 section {
-  padding: 30px 20px;
+  padding: 34px 20px;
 }
 
 @media (min-width: 900px) {
   section {
-    padding: 38px 40px;
+    padding: 46px 40px;
   }
 }
 
@@ -333,9 +330,9 @@ section + section {
 }
 
 .section-title {
-  font-size: 1.6rem;
-  line-height: 1.25;
-  margin-bottom: 10px;
+  font-size: clamp(1.8rem, 2vw + 1.2rem, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 14px;
 }
 
 .section-intro {
