@@ -1,64 +1,67 @@
 // Mobile nav toggle
-function toggleMobileNav(forceState) {
+function toggleMobileNav(force) {
   const nav = document.getElementById("mobileNav");
   if (!nav) return;
 
-  if (typeof forceState === "boolean") {
-    nav.style.display = forceState ? "flex" : "none";
+  if (typeof force === "boolean") {
+    nav.style.display = force ? "flex" : "none";
     return;
   }
+
   nav.style.display = nav.style.display === "flex" ? "none" : "flex";
 }
 
-// Shrink header on scroll
+// Header + big logo scroll behaviour
 (function () {
   const header = document.querySelector(".site-header");
-  const body = document.body;
   if (!header) return;
 
   function onScroll() {
-    const current = window.scrollY;
+    const y = window.scrollY;
 
-    if (current > 40) {
+    if (y > 40) {
       header.classList.add("compact");
     } else {
       header.classList.remove("compact");
     }
 
-    if (current > 80) {
-      body.classList.add("hero-logo-hidden");
+    if (y > 120) {
+      document.body.classList.add("body-scrolled-hero");
     } else {
-      body.classList.remove("hero-logo-hidden");
+      document.body.classList.remove("body-scrolled-hero");
     }
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 })();
 
-// Reveal-on-scroll animations
+// Reveal-on-scroll
 (function () {
-  const reveals = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window) || !reveals.length) {
-    reveals.forEach((el) => el.classList.add("reveal-visible"));
+  const els = document.querySelectorAll(".reveal");
+  if (!els.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    els.forEach((el) => el.classList.add("reveal-visible"));
     return;
   }
 
-  const observer = new IntersectionObserver(
+  const io = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-visible");
-          observer.unobserve(entry.target);
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("reveal-visible");
+          io.unobserve(e.target);
         }
       });
     },
     { threshold: 0.18 }
   );
 
-  reveals.forEach((el) => observer.observe(el));
+  els.forEach((el) => io.observe(el));
 })();
 
-// Set current year in footer
+// Footer year
 (function () {
   const span = document.getElementById("year");
   if (span) span.textContent = new Date().getFullYear();
