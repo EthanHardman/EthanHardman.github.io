@@ -1,1 +1,261 @@
+/* =========================================================
+   BASE & THEME
+   ========================================================= */
+
+:root {
+  --gunmetal: #2a2e35;
+  --gunmetal-light: #343840;
+  --purple: #1c102e;
+  --purple-light: #2c1e45;
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-light: #f4f4f4;
+  --muted: #9aa0ab;
+  --border-soft: 1px solid rgba(255,255,255,0.08);
+  --radius: 18px;
+  --shadow-soft: 0 28px 60px rgba(0,0,0,0.35);
+  --shadow-hard: 0 28px 70px rgba(0,0,0,0.6);
+  --fiverr: #00b22d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--gunmetal);
+  color: var(--text-light);
+  scroll-behavior: smooth;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(18px);
+  background: rgba(42,46,53,0.9);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: padding 0.25s ease, background 0.25s ease;
+}
+
+.site-header.compact {
+  background: rgba(32,35,40,0.92);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 26px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-left img {
+  width: 38px;
+  height: auto;
+  transition: transform 0.25s ease;
+}
+
+.site-header.compact img {
+  transform: scale(0.75);
+}
+
+.nav-title {
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-icons a img {
+  width: 22px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.nav-icons a:hover img {
+  opacity: 1;
+}
+
+.fiverr-btn {
+  background: var(--fiverr);
+  color: black;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.fiverr-btn:hover {
+  background: #00d330;
+}
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.hero {
+  background: var(--gunmetal);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero-logo img {
+  width: clamp(260px, 22vw, 340px);
+  transition: transform 0.4s ease, opacity 0.35s ease;
+}
+
+.body-scrolled-hero .hero-logo img {
+  transform: scale(0.35) translateY(-140px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =========================================================
+   SECTION BLOCKS
+   ========================================================= */
+
+section {
+  padding: 60px 26px;
+}
+
+.section-white {
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+.section-purple {
+  background: var(--purple);
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.section-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 900px) {
+  .section-grid-2x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background: var(--gunmetal-light);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* =========================================================
+   PORTFOLIO – INTERNAL SUBSECTIONS
+   ========================================================= */
+
+.subsection {
+  padding: 40px 20px;
+  border-radius: var(--radius);
+  margin-top: 20px;
+  box-shadow: var(--shadow-hard);
+}
+
+.subsection h4 {
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+}
+
+.audio-player {
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  padding: 26px;
+  text-align: center;
+  background: var(--gunmetal);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   REVEAL ON SCROLL
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
