@@ -26,6 +26,51 @@ if (navToggle && navDrawer) {
   });
 }
 
+// Helper: expand a section's "full" content and scroll to it
+function expandSection(sectionName) {
+  if (!sectionName) return;
+  const section = document.querySelector(`[data-section="${sectionName}"]`);
+  if (!section) return;
+
+  const full = section.querySelector(`[data-section-full="${sectionName}"]`);
+  if (full && full.hidden) {
+    full.hidden = false;
+    // update toggle button text if present
+    const toggleBtn = section.querySelector(`[data-section-toggle="${sectionName}"]`);
+    if (toggleBtn) toggleBtn.textContent = "Show less";
+  }
+
+  section.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// Top nav and hero buttons using data-section-link
+document.querySelectorAll("[data-section-link]").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    const sectionName = el.getAttribute("data-section-link");
+    if (sectionName === "top") {
+      document.getElementById("home").scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    expandSection(sectionName);
+  });
+});
+
+// "See more" / "Show less" toggles
+document.querySelectorAll("[data-section-toggle]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const sectionName = btn.getAttribute("data-section-toggle");
+    const section = document.querySelector(`[data-section="${sectionName}"]`);
+    if (!section) return;
+    const full = section.querySelector(`[data-section-full="${sectionName}"]`);
+    if (!full) return;
+
+    const isHidden = full.hidden;
+    full.hidden = !isHidden;
+    btn.textContent = isHidden ? "Show less" : "See more";
+  });
+});
+
 // Scroll reveal animations
 const revealEls = document.querySelectorAll(".reveal");
 
