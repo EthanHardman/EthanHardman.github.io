@@ -856,3 +856,62 @@ audio {
     gap: 60px;
   }
 }
+/* ================= ULTRAWIDE FIXES (3440×1440 and larger) ================= */
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  body {
+    font-size: 1.15rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 160px;
+  }
+
+  .hero-heading {
+    font-size: 3.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    max-width: 650px;
+  }
+
+  .hero-logo {
+    max-width: 520px;
+  }
+
+  .card {
+    padding: 32px 34px;
+    font-size: 1.15rem;
+  }
+
+  .service-card h3,
+  .audio-title {
+    font-size: 1.5rem;
+  }
+
+  .timeline-content p {
+    font-size: 1.15rem;
+  }
+
+  .contact-card p {
+    font-size: 1.1rem;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+
+  .nav-cta {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}
