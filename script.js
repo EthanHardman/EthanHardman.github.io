@@ -26,50 +26,45 @@ if (navToggle && navDrawer) {
   });
 }
 
-// Helper: expand a section's "full" content and scroll to it
-function expandSection(sectionName) {
-  if (!sectionName) return;
-  const section = document.querySelector(`[data-section="${sectionName}"]`);
-  if (!section) return;
-
-  const full = section.querySelector(`[data-section-full="${sectionName}"]`);
-  if (full && full.hidden) {
-    full.hidden = false;
-    // update toggle button text if present
-    const toggleBtn = section.querySelector(`[data-section-toggle="${sectionName}"]`);
-    if (toggleBtn) toggleBtn.textContent = "Show less";
-  }
-
-  section.scrollIntoView({ behavior: "smooth", block: "start" });
+// Helper: smooth scroll to section id
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// Top nav and hero buttons using data-section-link
+// Handle nav / buttons with data-section-link
 document.querySelectorAll("[data-section-link]").forEach((el) => {
   el.addEventListener("click", (e) => {
     e.preventDefault();
-    const sectionName = el.getAttribute("data-section-link");
-    if (sectionName === "top") {
-      document.getElementById("home").scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
+    const target = el.getAttribute("data-section-link");
+    if (!target) return;
+
+    // For portfolio: also expand extra content when navigating via nav/hero
+    if (target === "portfolio") {
+      const extra = document.getElementById("portfolio-extra");
+      const toggleBtn = document.getElementById("portfolio-toggle");
+      if (extra && toggleBtn && extra.hidden) {
+        extra.hidden = false;
+        toggleBtn.textContent = "Show less";
+      }
     }
-    expandSection(sectionName);
+
+    scrollToSection(target);
   });
 });
 
-// "See more" / "Show less" toggles
-document.querySelectorAll("[data-section-toggle]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const sectionName = btn.getAttribute("data-section-toggle");
-    const section = document.querySelector(`[data-section="${sectionName}"]`);
-    if (!section) return;
-    const full = section.querySelector(`[data-section-full="${sectionName}"]`);
-    if (!full) return;
+// Portfolio "See more / Show less" toggle
+const portfolioToggle = document.getElementById("portfolio-toggle");
+const portfolioExtra = document.getElementById("portfolio-extra");
 
-    const isHidden = full.hidden;
-    full.hidden = !isHidden;
-    btn.textContent = isHidden ? "Show less" : "See more";
+if (portfolioToggle && portfolioExtra) {
+  portfolioToggle.addEventListener("click", () => {
+    const isHidden = portfolioExtra.hidden;
+    portfolioExtra.hidden = !isHidden;
+    portfolioToggle.textContent = isHidden ? "Show less" : "See more";
   });
-});
+}
 
 // Scroll reveal animations
 const revealEls = document.querySelectorAll(".reveal");
@@ -84,9 +79,7 @@ if ("IntersectionObserver" in window) {
         }
       });
     },
-    {
-      threshold: 0.18
-    }
+    { threshold: 0.18 }
   );
 
   revealEls.forEach((el) => observer.observe(el));
