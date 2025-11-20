@@ -13,18 +13,23 @@ function toggleMobileNav(forceState) {
 // Shrink header on scroll
 (function () {
   const header = document.querySelector(".site-header");
+  const body = document.body;
   if (!header) return;
-
-  let lastScrollY = window.scrollY;
 
   function onScroll() {
     const current = window.scrollY;
+
     if (current > 40) {
       header.classList.add("compact");
     } else {
       header.classList.remove("compact");
     }
-    lastScrollY = current;
+
+    if (current > 80) {
+      body.classList.add("hero-logo-hidden");
+    } else {
+      body.classList.remove("hero-logo-hidden");
+    }
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
