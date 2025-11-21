@@ -2,486 +2,869 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Ethan Hardman | Mixing & Mastering Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ethan Hardman Audio – Mixes, Masters & Projects</title>
-  <meta name="description" content="Portfolio of mixes, masters and personal music projects by audio engineer & music producer Ethan Hardman, based in Greater Manchester, UK.">
-  <link rel="stylesheet" href="style.css" />
+  <meta
+    name="description"
+    content="Ethan Hardman – Mixing & Mastering Engineer specialising in UKG, House, DnB and live bands. BA Music (Leeds), 13+ years of performance experience."
+  />
+
+  <!-- Google Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Accessible SVG sprite for icons -->
-  <svg aria-hidden="true" style="position:absolute; width:0; height:0; overflow:hidden;">
-    <symbol id="icon-mail" viewBox="0 0 24 24">
-      <rect x="3" y="5" width="18" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <polyline points="4 7 12 12.5 20 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-instagram" viewBox="0 0 24 24">
-      <rect x="4" y="4" width="16" height="16" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <circle cx="17" cy="7" r="1" fill="currentColor"/>
-    </symbol>
-    <symbol id="icon-fiverr" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M9 15v-6h3.4a1.6 1.6 0 0 0 0-3.2H9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M9 12h6v3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-menu" viewBox="0 0 24 24">
-      <line x1="4" y1="7" x2="20" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="4" y1="17" x2="20" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24">
-      <line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="19" y1="5" x2="5" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-    </symbol>
-  </svg>
+  <div class="app-shell">
+    <!-- Top navigation / header -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="#home" class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-text">Ethan<span>Hardman</span></span>
+        </a>
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
-    <div class="container nav">
-      <a href="#home" class="nav-brand" data-section-link="home">
-        <span class="nav-logo-dot"></span>
-        <div class="nav-brand-text">
-          <span class="nav-title">Ethan Hardman Audio</span>
-          <span class="nav-subtitle">Mixes, masters &amp; personal projects</span>
-        </div>
-      </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#booking" class="nav-link">Booking</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
 
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#services" data-section-link="services">Services</a>
-        <a href="#portfolio" data-section-link="portfolio">Portfolio</a>
-        <a href="#process" data-section-link="process">Process</a>
-        <a href="#about" data-section-link="about">About</a>
-        <a href="#contact" data-section-link="contact">Contact</a>
-      </nav>
-
-      <button class="nav-cta" data-section-link="contact">
-        Book a project
-      </button>
-
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <svg class="icon"><use href="#icon-menu"/></svg>
-      </button>
-    </div>
-
-    <!-- mobile dropdown -->
-    <nav class="nav-drawer" aria-label="Mobile navigation">
-      <a href="#services" data-section-link="services">Services</a>
-      <a href="#portfolio" data-section-link="portfolio">Portfolio</a>
-      <a href="#process" data-section-link="process">Process</a>
-      <a href="#about" data-section-link="about">About</a>
-      <a href="#contact" data-section-link="contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- ================= MAIN ================= -->
-  <main id="main">
-    <!-- ===== HERO (FULL SCREEN) ===== -->
-    <section class="hero section-block" id="home">
-      <div class="hero-bg"></div>
-      <div class="container hero-inner">
-        <div class="hero-logo-wrapper reveal">
-          <!-- IMPORTANT: this must match your actual file name in /assets -->
-          <!-- If your file is named differently, change JUST the filename below -->
-          <img src="assets/ETHAN HARDMAN AUDIO PNG.png"
-               alt="Ethan Hardman Audio logo"
-               class="hero-logo">
-        </div>
-
-        <div class="hero-text reveal delay-1">
-          <p class="hero-eyebrow">Portfolio • Greater Manchester, UK</p>
-          <h1 class="hero-heading">
-            I mix, master and shape music<br>
-            that feels as alive as it sounds.
-          </h1>
-          <p class="hero-subtitle">
-            This site is my portfolio of mixes, masters and personal projects. I enjoy producing
-            UK-based electronic music, but when it comes to mixing and mastering I’m especially
-            drawn to live instrumentation – where my trumpet training really helps me hear
-            phrasing, dynamics and space in a more musical way.
-          </p>
-          <div class="hero-actions">
-            <button class="btn primary" data-section-link="portfolio">Hear my work</button>
-            <button class="btn ghost" data-section-link="services">See what I offer</button>
-          </div>
-          <p class="hero-note">
-            Live &amp; electronic projects • Focus on musical feel, clarity and translation
-          </p>
-        </div>
-
-        <button
-          class="scroll-indicator"
-          aria-label="Scroll to services"
-          data-section-link="services">
-          Scroll
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
         </button>
       </div>
-    </section>
+    </header>
 
-    <!-- ===== SERVICES (FULL SCREEN BLOCK) ===== -->
-    <section class="section section-block" id="services">
-      <div class="container">
-        <div class="section-header reveal">
-          <p class="section-eyebrow">Services</p>
-          <h2 class="section-title">How I work on your music</h2>
-          <p class="section-subtitle">
-            I enjoy producing UK electronic styles, but my favourite thing to mix and master
-            is music with real instruments and human feel – where my background on trumpet
-            makes it easier to lock into the performance.
-          </p>
-        </div>
+    <!-- Main content -->
+    <main>
+      <!-- Hero / Intro -->
+      <section id="home" class="section hero">
+        <div class="section-inner hero-inner">
+          <div class="hero-text reveal">
+            <!-- Your logo in the hero -->
+            <img
+              src="assets/ethan-logo.png"
+              alt="Ethan Hardman Audio logo"
+              class="hero-logo"
+            />
 
-        <div class="section-body reveal delay-1">
-          <div class="service-grid">
-            <article class="card service-card">
-              <h3>Mixing</h3>
-              <p>
-                I mix full multi-track sessions for both live and electronic music. Whether it’s
-                a band recording, a project full of layered synths or a hybrid of the two, I try
-                to make everything feel coherent and musical.
-              </p>
-              <ul>
-                <li>Clean, balanced, powerful mixes with an ear for performance and feel.</li>
-                <li>Extra attention to live instrumentation, phrasing and dynamics.</li>
-                <li>Low-end control and width for electronic tracks without losing groove.</li>
-              </ul>
-            </article>
+            <p class="eyebrow">Mixing · Mastering · Live Audio · UK Dance</p>
+            <h1>
+              Clean. Punchy. Musical.<br />
+              <span class="accent">Mixes that actually translate.</span>
+            </h1>
+            <p class="hero-subtitle">
+              I’m Ethan, a mixing & mastering engineer and trumpet player based in the UK.
+              I specialise in UK Garage, House, DnB and live bands – combining
+              a BA in Music (University of Leeds) with over a decade of real performance experience.
+            </p>
 
-            <article class="card service-card">
-              <h3>Mastering</h3>
-              <p>
-                My mastering focuses on keeping the musical intention intact while getting your
-                track to sit comfortably next to other releases.
-              </p>
-              <ul>
-                <li>Loudness without flattening everything into a brick.</li>
-                <li>Masters that work on headphones, speakers and live systems.</li>
-                <li>Streaming-ready levels and optional DJ-friendly versions.</li>
-              </ul>
-            </article>
+            <!-- Portfolio-building offer -->
+            <p class="hero-offer">
+              <strong>Building my portfolio:</strong> I’m currently accepting a limited number of
+              <strong>free or discounted mixes & masters</strong> in exchange for permission to feature
+              short 30–40 second excerpts of the finished tracks on this site.
+            </p>
 
-            <article class="card service-card">
-              <h3>Vocal Editing</h3>
-              <p>
-                Vocals are often the emotional centre of a track, so I treat them carefully.
-              </p>
-              <ul>
-                <li>Breath and noise clean-up where it helps clarity.</li>
-                <li>Subtle tuning and timing tweaks that still feel natural.</li>
-                <li>Tone shaping so the vocal sits in the mix without fighting everything else.</li>
-              </ul>
-            </article>
+            <div class="hero-actions">
+              <a href="#portfolio" class="button button-primary">
+                <i class="fa-solid fa-headphones-simple"></i>
+                Listen to my work
+              </a>
+              <a href="#booking" class="button button-ghost">
+                <i class="fa-regular fa-calendar-check"></i>
+                Book a session
+              </a>
+            </div>
 
-            <article class="card service-card">
-              <h3>Production Help &amp; WIPs</h3>
-              <p>
-                If you’re too close to the project, I can help you get unstuck and move forwards.
-              </p>
-              <ul>
-                <li>Arrangement suggestions and structure clean-up.</li>
-                <li>Sound selection and drum/groove refinement.</li>
-                <li>Taking a rough idea or loop and shaping it into a finished piece.</li>
-              </ul>
-            </article>
+            <div class="hero-tags">
+              <span class="tag">Ableton Live Suite 12</span>
+              <span class="tag">FabFilter Pro Bundle</span>
+              <span class="tag">Live Bands & Brass</span>
+              <span class="tag">UKG · House · DnB</span>
+            </div>
           </div>
 
-          <p class="section-footnote">
-            All paid services go through Fiverr so payment and file delivery stay safe and organised.
-            If I have availability for free/portfolio work, that’s arranged directly over email.
-          </p>
-        </div>
-      </div>
-    </section>
+          <div class="hero-panel reveal">
+            <div class="hero-card">
+              <!-- WELL Said logo – JPEG -->
+              <img
+                src="assets/well-said-logo.jpg"
+                alt="WELL Said band logo"
+                class="well-said-logo"
+              />
 
-    <!-- ===== PORTFOLIO (FULL SCREEN BLOCK, WITH SEE MORE) ===== -->
-    <section class="section section-alt section-block" id="portfolio">
-      <div class="container">
-        <div class="section-header reveal">
-          <p class="section-eyebrow">Portfolio</p>
-          <h2 class="section-title">Mixes, masters &amp; personal projects</h2>
-          <p class="section-subtitle">
-            This is where everything comes together – before/after examples of my mix and master work,
-            plus personal projects that show what I like to create.
-          </p>
-        </div>
-
-        <!-- Always visible core portfolio (before / after) -->
-        <div class="section-body reveal delay-1">
-          <div class="portfolio-grid">
-            <article class="card audio-card">
-              <div class="audio-label">Before</div>
-              <h3 class="audio-title">Example track – raw mix</h3>
-              <p class="audio-text">
-                A rough or unbalanced mix is actually useful for showing what I change – maybe the
-                low-end is muddy, the top end is harsh, or the instruments don’t quite sit together yet.
+              <p class="hero-card-label">Flagship project</p>
+              <h2>WELL Said – 40th Anniversary Live at The Met</h2>
+              <p class="hero-card-text">
+                Full 2.5-hour 40th anniversary show for Bury-based ska / pop / funk band WELL Said,
+                mixed and mastered for multi-camera video release. Electric guitars, bass, drums,
+                saxophones, trumpet, trombone and vocals balanced into a coherent, energetic mix
+                that keeps the groove and crowd energy intact.
               </p>
-              <audio controls>
-                <source src="audio/example-before.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-              <p class="audio-note">
-                I usually use a 30–40 second section that clearly shows what isn’t working yet.
+              <div class="hero-meta">
+                <span><i class="fa-solid fa-location-dot"></i> The Met, Bury</span>
+                <span><i class="fa-regular fa-clock"></i> 2.5 hours live</span>
+              </div>
+              <div class="hero-player">
+                <div class="player-artwork">
+                  <span class="pulse"></span>
+                </div>
+                <div class="player-info">
+                  <p class="player-title">Live Mix Excerpt (Preview)</p>
+                  <p class="player-meta">WELL Said · Mixed by Ethan Hardman</p>
+                  <div class="player-bar">
+                    <div class="player-bar-fill"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="hero-note">
+                <em>Full audio & video coming soon – this project will form the core of my live portfolio.</em>
               </p>
-            </article>
-
-            <article class="card audio-card">
-              <div class="audio-label audio-label-after">After</div>
-              <h3 class="audio-title">Example track – final mix / master</h3>
-              <p class="audio-text">
-                Here’s the same section once I’ve worked on it – focusing on clarity, impact, space
-                and making the performance feel more confident.
-              </p>
-              <audio controls>
-                <source src="audio/example-after.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-              <p class="audio-note">
-                Comparing the same exact section back-to-back is the easiest way to hear the difference.
-              </p>
-            </article>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- Extra portfolio content (hidden until See more) -->
-        <div class="section-body reveal delay-2" id="portfolio-extra" hidden>
-          <div class="service-grid portfolio-extra-grid">
-            <article class="card service-card slim">
-              <h3>Original music &amp; personal projects</h3>
-              <p>
-                Alongside client work, I also produce my own music. A lot of it leans into UK-based
-                electronic styles, but I also like exploring more atmospheric and melodic ideas.
-              </p>
-              <p class="service-small">
-                These projects are a space for me to experiment, apply what I learn in mixes and
-                masters, and keep my ears sharp creatively.
-              </p>
-            </article>
-
-            <article class="card service-card slim">
-              <h3>Streaming &amp; socials</h3>
-              <p>
-                As more tracks are released and profiles go live, I’ll link them here for you to
-                explore full songs in context.
-              </p>
-              <ul>
-                <li>Instagram: <a href="https://instagram.com/ethanhaudio" target="_blank" rel="noopener noreferrer">instagram.com/ethanhaudio</a></li>
-                <li>Fiverr (for paid projects): <a href="https://fiverr.com/" target="_blank" rel="noopener noreferrer">fiverr.com</a> (placeholder for now).</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-
-        <div class="section-actions reveal delay-3">
-          <button class="btn ghost" id="portfolio-toggle">
-            See more
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROCESS (FULL SCREEN BLOCK) ===== -->
-    <section class="section section-block" id="process">
-      <div class="container">
-        <div class="section-header reveal">
-          <p class="section-eyebrow">Process</p>
-          <h2 class="section-title">How working with me usually feels</h2>
-          <p class="section-subtitle">
-            I try to keep things simple: clear communication, musical decisions, and enough structure
-            that you always know what’s happening next.
-          </p>
-        </div>
-
-        <div class="section-body reveal delay-1">
-          <ol class="timeline">
-            <li class="timeline-item">
-              <div class="timeline-badge">1</div>
-              <div class="timeline-content">
-                <h3>Share your track &amp; goals</h3>
-                <p>
-                  You send me a demo or rough mix, a bit of context, and what you’d like to improve –
-                  maybe the drums don’t hit hard enough, the vocal feels buried, or a live recording
-                  needs more polish.
-                </p>
-              </div>
-            </li>
-
-            <li class="timeline-item">
-              <div class="timeline-badge">2</div>
-              <div class="timeline-content">
-                <h3>Plan &amp; quote</h3>
-                <p>
-                  I’ll reply with first impressions, suggestions and a plan. If it’s a paid project,
-                  I’ll direct you to Fiverr where we can lock it in properly with a clear scope and price.
-                </p>
-              </div>
-            </li>
-
-            <li class="timeline-item">
-              <div class="timeline-badge">3</div>
-              <div class="timeline-content">
-                <h3>Mixing / mastering &amp; revisions</h3>
-                <p>
-                  I’ll work through the mix or master, then send you a version to listen to in your own
-                  space. Your feedback is part of the process – I’d rather know what you actually feel
-                  than guess.
-                </p>
-              </div>
-            </li>
-
-            <li class="timeline-item">
-              <div class="timeline-badge">4</div>
-              <div class="timeline-content">
-                <h3>Delivery &amp; formats</h3>
-                <p>
-                  Once we’re both happy, I’ll deliver final files in the formats you need – streaming,
-                  DJ-friendly masters, high-res WAV and so on. My goal is for you to feel confident
-                  pressing play anywhere.
-                </p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ABOUT (FULL SCREEN BLOCK, NO SEE MORE) ===== -->
-    <section class="section section-alt section-block" id="about">
-      <div class="container about-grid">
-        <div class="about-text reveal">
-          <p class="section-eyebrow">About me</p>
-          <h2 class="section-title">Musician first, engineer by choice.</h2>
-          <p>
-            I’m an audio engineer and music producer based in Greater Manchester, UK. I’ve been
-            working with audio since 2019, and I come at everything from a musical angle rather
-            than purely technical.
-          </p>
-          <p>
-            I studied BA (Hons) Music at the University of Leeds and BTEC Music Technology, and
-            I’ve been playing trumpet since 2011. That performance background really shapes how I
-            hear things – especially live instrumentation and arrangements where phrasing and dynamics
-            matter.
-          </p>
-          <p>
-            I do enjoy producing UK-based electronic genres, but when I’m mixing and mastering
-            I’m particularly drawn to music with real instruments and human feel. Brass, bands,
-            acoustic recordings – that’s where my ear feels most at home.
-          </p>
-          <ul>
-            <li>Worked with audio and production since 2019.</li>
-            <li>Comfortable across live, acoustic and electronic projects.</li>
-            <li>Mix decisions always tied back to musical feel and intention.</li>
-          </ul>
-        </div>
-
-        <aside class="about-metrics reveal delay-1">
-          <div class="card metric-card">
-            <div class="metric-row">
-              <span class="metric-label">Base</span>
-              <span class="metric-value">Greater Manchester, UK</span>
-            </div>
-            <div class="metric-row">
-              <span class="metric-label">Working with audio since</span>
-              <span class="metric-value">2019</span>
-            </div>
-            <div class="metric-row">
-              <span class="metric-label">What I love mixing</span>
-              <span class="metric-value">Live instrumentation &amp; UK-influenced projects</span>
-            </div>
-            <div class="metric-row">
-              <span class="metric-label">Background</span>
-              <span class="metric-value">BA Music, BTEC Music Tech, trumpet</span>
-            </div>
-            <p class="metric-note">
-              Whether it’s a live band, an acoustic recording or an electronic track, I’m trying to
-              keep what makes it emotionally interesting and make that come across more clearly.
+      <!-- Social strip -->
+      <section class="section section-alt">
+        <div class="section-inner socials-inner reveal">
+          <div class="socials-text">
+            <h2>Connect, listen & collaborate</h2>
+            <p>
+              Find my work, showreels and releases across platforms. I’m building my portfolio
+              around live gigs, UK dance production and detailed mix breakdowns.
             </p>
           </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT (FULL SCREEN BLOCK) ===== -->
-    <section class="section section-block" id="contact">
-      <div class="container">
-        <div class="section-header reveal">
-          <p class="section-eyebrow">Contact</p>
-          <h2 class="section-title">Let’s talk about your track</h2>
-          <p class="section-subtitle">
-            Whether it’s a live recording, an electronic tune or something in between, I’m happy to
-            listen and let you know how I’d approach it.
-          </p>
+          <div class="socials-icons">
+            <!-- Replace with real links as they go live -->
+            <a href="https://instagram.com/ethanhaudio" class="social-icon" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="SoundCloud" title="Coming soon">
+              <i class="fa-brands fa-soundcloud"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Spotify" title="Coming soon">
+              <i class="fa-brands fa-spotify"></i>
+            </a>
+            <a
+              href="mailto:contact.ethanhardmanaudio@gmail.com"
+              class="social-icon"
+              aria-label="Email"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Fiverr" title="Coming soon">
+              <i class="fa-solid fa-briefcase"></i>
+            </a>
+          </div>
         </div>
+      </section>
 
-        <div class="section-body reveal delay-1">
-          <div class="contact-grid">
-            <!-- Email -->
-            <article class="card contact-card">
-              <div class="contact-icon">
-                <svg class="icon"><use href="#icon-mail"/></svg>
+      <!-- Portfolio -->
+      <section id="portfolio" class="section">
+        <div class="section-inner">
+          <div class="section-header reveal">
+            <h2>Portfolio</h2>
+            <p>
+              A selection of current and upcoming work across live audio, UK dance genres
+              and experimental projects. WELL Said’s 40th anniversary show is the
+              flagship project, with more examples being added as they’re released.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <!-- WELL Said live project -->
+            <article class="card reveal">
+              <p class="card-label">Live · Mixing & Mastering</p>
+              <h3>WELL Said – 40th Anniversary Live at The Met</h3>
+              <p class="card-text">
+                Full 2.5-hour anniversary gig for ska / pop / funk band WELL Said,
+                mixed and mastered for multi-camera video release. Tight rhythm section,
+                punchy horn lines and clear vocals with controlled crowd ambience.
+              </p>
+              <ul class="card-list">
+                <li>Multi-mic live band recording</li>
+                <li>Broadband and multiband dynamics</li>
+                <li>Audience & room ambience control</li>
+                <li>Masters tailored for video / streaming</li>
+              </ul>
+              <div class="card-footer">
+                <span class="tag">Live Mix</span>
+                <span class="tag">Mastering</span>
+                <span class="tag">Ska / Pop / Funk</span>
               </div>
-              <h3>Email</h3>
-              <p>
-                Best place to start a conversation or ask questions. If you’re interested in
-                free/portfolio work, this is how to reach me.
-              </p>
-              <a class="contact-link" href="mailto:contact.ethanhardmanaudio@gmail.com">
-                contact.ethanhardmanaudio@gmail.com
-              </a>
-              <p class="contact-note">
-                If you can, include a demo link, a short description of the project and whether
-                you’re after mixing, mastering, or both.
-              </p>
+              <div class="card-actions">
+                <button
+                  class="button button-ghost button-small listen-button"
+                  data-project="well-said"
+                  type="button"
+                >
+                  <i class="fa-solid fa-play"></i>
+                  Have a listen
+                </button>
+              </div>
             </article>
 
-            <!-- Fiverr -->
-            <article class="card contact-card">
-              <div class="contact-icon">
-                <svg class="icon"><use href="#icon-fiverr"/></svg>
+            <!-- UKG / House / DnB – placeholder -->
+            <article class="card reveal">
+              <p class="card-label">Production · UKG / House / DnB</p>
+              <h3>UK Dance Projects</h3>
+              <p class="card-text">
+                Upcoming portfolio of original UK Garage, House and Drum & Bass productions,
+                focused on punchy drums, warm low-end and detailed stereo imaging for club
+                and headphone listening.
+              </p>
+              <ul class="card-list">
+                <li>Written & produced in Ableton Live Suite 12</li>
+                <li>Serum-based bass & lead design</li>
+                <li>FabFilter-driven mix processing</li>
+                <li>Club-ready pre-masters</li>
+              </ul>
+              <div class="card-footer">
+                <span class="tag">Coming soon</span>
+                <span class="tag">UKG / House / DnB</span>
               </div>
-              <h3>Fiverr</h3>
-              <p>
-                All paid services run through Fiverr so payment, messaging and file transfers are
-                managed in one place.
-              </p>
-              <a class="contact-link" href="https://fiverr.com/" target="_blank" rel="noopener noreferrer">
-                View my Fiverr page
-              </a>
-              <p class="contact-note">
-                The link here is a placeholder until my final profile URL is set – I’ll keep this
-                updated once it’s live.
-              </p>
+              <div class="card-actions">
+                <button
+                  class="button button-ghost button-small listen-button"
+                  data-project="uk-dance"
+                  type="button"
+                >
+                  <i class="fa-solid fa-play"></i>
+                  Have a listen
+                </button>
+              </div>
             </article>
 
-            <!-- Instagram -->
-            <article class="card contact-card">
-              <div class="contact-icon">
-                <svg class="icon"><use href="#icon-instagram"/></svg>
-              </div>
-              <h3>Instagram</h3>
-              <p>
-                Clips, work-in-progress ideas and little glimpses behind the mixes and projects I’m
-                working on.
+            <!-- Vocal / small ensemble – placeholder -->
+            <article class="card reveal">
+              <p class="card-label">Studio · Mixing</p>
+              <h3>Vocal & Small Ensemble Mixes</h3>
+              <p class="card-text">
+                Future portfolio pieces will showcase intimate vocal, acoustic and small ensemble
+                recordings, highlighting clarity, space and musical dynamics.
               </p>
-              <a class="contact-link" href="https://instagram.com/ethanhaudio" target="_blank" rel="noopener noreferrer">
-                @ethanhaudio
-              </a>
+              <ul class="card-list">
+                <li>Vocal mixing & gentle tuning</li>
+                <li>Guitar, keys & rhythm balancing</li>
+                <li>Reverb & delay soundstage design</li>
+                <li>Streaming-ready masters</li>
+              </ul>
+              <div class="card-footer">
+                <span class="tag">Coming soon</span>
+                <span class="tag">Vocals</span>
+                <span class="tag">Acoustic</span>
+              </div>
+              <div class="card-actions">
+                <button
+                  class="button button-ghost button-small listen-button"
+                  data-project="vocal"
+                  type="button"
+                >
+                  <i class="fa-solid fa-play"></i>
+                  Have a listen
+                </button>
+              </div>
+            </article>
+
+            <!-- Experimental / uni work – placeholder -->
+            <article class="card reveal">
+              <p class="card-label">Sound Design · Experimental</p>
+              <h3>Experimental & University Projects</h3>
+              <p class="card-text">
+                A curated selection of musique concrète pieces, remixes and sound design work
+                from my BA Music degree will be added here soon, showcasing more experimental
+                sides of my practice.
+              </p>
+              <ul class="card-list">
+                <li>Audio collage & texture exploration</li>
+                <li>Creative spatialisation & ambience</li>
+                <li>Remix reconstruction & analysis</li>
+                <li>Sound design for narrative & mood</li>
+              </ul>
+              <div class="card-footer">
+                <span class="tag">Coming soon</span>
+                <span class="tag">Sound Design</span>
+                <span class="tag">Experimental</span>
+              </div>
+              <div class="card-actions">
+                <button
+                  class="button button-ghost button-small listen-button"
+                  data-project="experimental"
+                  type="button"
+                >
+                  <i class="fa-solid fa-play"></i>
+                  Have a listen
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Expanding project detail area -->
+          <div id="portfolio-detail-wrapper" class="portfolio-detail-wrapper">
+            <!-- WELL Said detail -->
+            <article
+              class="portfolio-detail"
+              data-project-detail="well-said"
+            >
+              <div class="portfolio-detail-header">
+                <div>
+                  <p class="card-label">Live · Mixing & Mastering</p>
+                  <h3>WELL Said – 40th Anniversary Live at The Met</h3>
+                  <p class="portfolio-detail-text">
+                    A ska / pop / funk band with full rhythm section and horns:
+                    electric guitars, bass, drums, saxophones, trumpet, trombone and vocals.
+                    Recorded live at The Met in Bury for a multi-camera video release.
+                  </p>
+                </div>
+                <button
+                  class="button button-ghost button-small portfolio-detail-close"
+                  type="button"
+                >
+                  <i class="fa-solid fa-arrow-up"></i>
+                  Go back
+                </button>
+              </div>
+
+              <div class="portfolio-detail-grid">
+                <div class="detail-block">
+                  <h4>What this is</h4>
+                  <ul class="simple-list">
+                    <li>2.5-hour anniversary gig for WELL Said</li>
+                    <li>Multi-mic live band recording at The Met, Bury</li>
+                    <li>Mixed and mastered for YouTube-style video release</li>
+                  </ul>
+                </div>
+
+                <div class="detail-block">
+                  <h4>What I did</h4>
+                  <ul class="simple-list">
+                    <li>Gain staging and cleanup across all sources</li>
+                    <li>EQ & compression for drums, bass, guitars, horns & vocals</li>
+                    <li>Parallel processing to keep energy without harshness</li>
+                    <li>Balancing crowd / room mics with the close mics</li>
+                  </ul>
+                </div>
+
+                <div class="detail-block">
+                  <h4>What to listen for</h4>
+                  <ul class="simple-list">
+                    <li>How the horns stay bright without becoming piercing</li>
+                    <li>Kick / bass relationship in the low end</li>
+                    <li>Vocals staying intelligible over a dense live mix</li>
+                    <li>Audience ambience that feels present but controlled</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="detail-audio-grid">
+                <div class="audio-block">
+                  <p class="card-label">Before</p>
+                  <h4>Raw live mix excerpt</h4>
+                  <p class="portfolio-detail-text">
+                    A short section of the original rough balance, before detailed processing
+                    and mastering.
+                  </p>
+                  <div class="audio-placeholder">
+                    <span>Audio excerpt coming soon</span>
+                    <!--
+                    <audio controls>
+                      <source src="audio/well-said-before.mp3" type="audio/mpeg" />
+                    </audio>
+                    -->
+                  </div>
+                </div>
+
+                <div class="audio-block">
+                  <p class="card-label">After</p>
+                  <h4>Final mix & master excerpt</h4>
+                  <p class="portfolio-detail-text">
+                    The same section after full mix and master, optimised for playback on
+                    streaming and video platforms.
+                  </p>
+                  <div class="audio-placeholder">
+                    <span>Audio excerpt coming soon</span>
+                    <!--
+                    <audio controls>
+                      <source src="audio/well-said-after.mp3" type="audio/mpeg" />
+                    </audio>
+                    -->
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- UK Dance placeholder detail -->
+            <article
+              class="portfolio-detail"
+              data-project-detail="uk-dance"
+            >
+              <div class="portfolio-detail-header">
+                <div>
+                  <p class="card-label">Production · UKG / House / DnB</p>
+                  <h3>UK Dance Projects</h3>
+                  <p class="portfolio-detail-text">
+                    Upcoming original tracks and remixes in UK Garage, House and DnB.
+                    These examples will showcase my club-focused production and mix approach.
+                  </p>
+                </div>
+                <button
+                  class="button button-ghost button-small portfolio-detail-close"
+                  type="button"
+                >
+                  <i class="fa-solid fa-arrow-up"></i>
+                  Go back
+                </button>
+              </div>
+
+              <p class="portfolio-detail-text">
+                Audio demos for UK dance projects aren’t live just yet. Once they’re ready,
+                this section will feature before/after mix comparisons, drum/bass balance
+                breakdowns and notes on sound design choices.
+              </p>
+
+              <div class="audio-placeholder audio-placeholder-wide">
+                <span>UKG / House / DnB audio excerpts coming soon</span>
+              </div>
+            </article>
+
+            <!-- Vocal placeholder detail -->
+            <article
+              class="portfolio-detail"
+              data-project-detail="vocal"
+            >
+              <div class="portfolio-detail-header">
+                <div>
+                  <p class="card-label">Studio · Mixing</p>
+                  <h3>Vocal & Small Ensemble Mixes</h3>
+                  <p class="portfolio-detail-text">
+                    Future examples of vocal-forward and acoustic-focused work, including
+                    small vocal groups and singer-songwriter projects.
+                  </p>
+                </div>
+                <button
+                  class="button button-ghost button-small portfolio-detail-close"
+                  type="button"
+                >
+                  <i class="fa-solid fa-arrow-up"></i>
+                  Go back
+                </button>
+              </div>
+
+              <p class="portfolio-detail-text">
+                This space will highlight how I approach clarity, intimacy and space in vocal
+                and acoustic mixes, with A/B examples of processing chains and ambience choices.
+              </p>
+
+              <div class="audio-placeholder audio-placeholder-wide">
+                <span>Vocal & acoustic mix excerpts coming soon</span>
+              </div>
+            </article>
+
+            <!-- Experimental placeholder detail -->
+            <article
+              class="portfolio-detail"
+              data-project-detail="experimental"
+            >
+              <div class="portfolio-detail-header">
+                <div>
+                  <p class="card-label">Sound Design · Experimental</p>
+                  <h3>Experimental & University Projects</h3>
+                  <p class="portfolio-detail-text">
+                    Upcoming selections from musique concrète, remix and sound design work
+                    created during my BA Music degree.
+                  </p>
+                </div>
+                <button
+                  class="button button-ghost button-small portfolio-detail-close"
+                  type="button"
+                >
+                  <i class="fa-solid fa-arrow-up"></i>
+                  Go back
+                </button>
+              </div>
+
+              <p class="portfolio-detail-text">
+                Here you’ll eventually find textural pieces, creative remixes and narrative
+                sound design, along with notes on how each sound world was constructed.
+              </p>
+
+              <div class="audio-placeholder audio-placeholder-wide">
+                <span>Experimental audio examples coming soon</span>
+              </div>
             </article>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Ethan Hardman Audio. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="mailto:contact.ethanhardmanaudio@gmail.com">Email</a>
-        <a href="https://instagram.com/ethanhaudio" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://fiverr.com/" target="_blank" rel="noopener noreferrer">Fiverr</a>
+      <!-- Services -->
+      <section id="services" class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header reveal">
+            <h2>Services</h2>
+            <p>
+              Flexible, collaboration-focused services for artists, bands and producers.
+              All projects include clear communication, reference-based feedback and revisions.
+              While I expand my portfolio, I’m offering selected projects free or at a discount
+              in exchange for permission to showcase short excerpts on this site.
+            </p>
+          </div>
+
+          <div class="cards-grid services-grid">
+            <article class="card reveal">
+              <p class="card-label">Mixing</p>
+              <h3>Track & Project Mixing</h3>
+              <p class="card-text">
+                From UK dance to live bands, I’ll take your stems from rough balance
+                to a polished, musical mix that holds up on headphones, cars and clubs.
+              </p>
+              <ul class="card-list">
+                <li>Static balance & gain staging</li>
+                <li>EQ, compression & saturation</li>
+                <li>Creative FX & automation</li>
+                <li>2–3 revisions included</li>
+              </ul>
+              <div class="service-meta">
+                <span class="service-price">
+                  From £75 / track<span class="price-note">*</span>
+                </span>
+                <span class="tag">Stereo mix</span>
+              </div>
+              <p class="service-note">
+                * While I build my portfolio, selected mixing projects may qualify for
+                free or discounted rates in exchange for permission to feature a
+                30–40 second excerpt on this website.
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <p class="card-label">Mastering</p>
+              <h3>Mastering & Stem Mastering</h3>
+              <p class="card-text">
+                Masters that are loud enough to compete, but still musical.
+                Calibrated monitoring and reference-based decisions for each release.
+              </p>
+              <ul class="card-list">
+                <li>Stereo mastering</li>
+                <li>Stem mastering (drums / music / vocals)</li>
+                <li>Loudness tailored to platform</li>
+                <li>1–2 revisions included</li>
+              </ul>
+              <div class="service-meta">
+                <span class="service-price">
+                  From £25 / track<span class="price-note">*</span>
+                </span>
+                <span class="tag">Streaming ready</span>
+              </div>
+              <p class="service-note">
+                * I’m also offering free or discounted mastering on selected tracks, on the
+                condition that I can use a 30–40 second excerpt for promotional use in my
+                online portfolio.
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <p class="card-label">Live</p>
+              <h3>Live Gig Mixing for Release</h3>
+              <p class="card-text">
+                Complete live show mixes for bands, brass ensembles and function groups,
+                optimised for video, streaming and archival.
+              </p>
+              <ul class="card-list">
+                <li>Multi-track concert mixing</li>
+                <li>Audience / room balance</li>
+                <li>Noise & artefact control</li>
+                <li>Master for video or audio-only</li>
+              </ul>
+              <div class="service-meta">
+                <span class="service-price">From £150 / show</span>
+                <span class="tag">Concerts</span>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <p class="card-label">Production</p>
+              <h3>UKG, House & DnB Production</h3>
+              <p class="card-text">
+                Bespoke tracks, remixes or additional production for your existing ideas.
+                Focused on modern UK dance sonics with musicality at the core.
+              </p>
+              <ul class="card-list">
+                <li>Beat & bass design</li>
+                <li>Arrangement support</li>
+                <li>Sound selection & layering</li>
+                <li>Pre-mix for club testing</li>
+              </ul>
+              <div class="service-meta">
+                <span class="service-price">Project-based</span>
+                <span class="tag">UKG / House / DnB</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section">
+        <div class="section-inner about-inner">
+          <div class="about-text reveal">
+            <h2>About</h2>
+            <p>
+              I’m Ethan Hardman, a UK-based mixing & mastering engineer, producer and trumpet player.
+              I’ve been playing trumpet since 2011, performing in orchestras, big bands and brass bands,
+              and I currently play front row cornet with Lindley Brass Band in West Yorkshire.
+            </p>
+            <p>
+              I hold a <strong>BA in Music</strong> from the University of Leeds and a
+              <strong>Level 3 BTEC National Extended Certificate in Music Technology</strong>.
+              I’ve been working in <strong>Ableton Live</strong> since 2019, with additional experience in Logic,
+              and my workflow is built around FabFilter, Serum and detailed referencing.
+            </p>
+            <p>
+              My background as an instrumentalist means I mix with a musician’s ear:
+              pitch, timing and feel matter just as much as loudness and tone.
+            </p>
+
+            <div class="about-columns">
+              <div>
+                <h3>Gear & Tools</h3>
+                <ul class="simple-list">
+                  <li>Ableton Live Suite 12</li>
+                  <li>GMKtec NucBox K12 PC</li>
+                  <li>Focusrite Scarlett 2i2</li>
+                  <li>Pioneer DM-40D monitors</li>
+                  <li>Audio-Technica ATH-M20x</li>
+                  <li>HDG Cue One DJ headphones</li>
+                  <li>FabFilter Pro Bundle</li>
+                  <li>Dada Life bundle (Sausage Fattener)</li>
+                  <li>Youlean Loudness Meter 2</li>
+                  <li>Serum · Arturia Minilab Mk2</li>
+                </ul>
+              </div>
+              <div>
+                <h3>What I’m best at</h3>
+                <ul class="simple-list">
+                  <li>Live band & horn section mixes</li>
+                  <li>UKG, House & DnB production</li>
+                  <li>Live gig mixing for video</li>
+                  <li>Detailed, musical mastering</li>
+                  <li>Collaborative, reference-led workflow</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-side reveal">
+            <div class="about-card">
+              <p class="card-label">Availability</p>
+              <h3>Remote worldwide · UK-based</h3>
+              <p>
+                I work remotely with artists, bands and creators. Stems can be sent via
+                WeTransfer, Dropbox or Google Drive. I’m happy to jump on calls to discuss
+                references and direction before I touch a fader.
+              </p>
+              <a href="#booking" class="button button-primary button-full">
+                Schedule a project chat
+              </a>
+            </div>
+
+            <div class="about-card">
+              <p class="card-label">Workflow</p>
+              <ul class="simple-list">
+                <li>1. You send stems & references</li>
+                <li>2. I send a short mix preview</li>
+                <li>3. Feedback round & refinements</li>
+                <li>4. Final master in agreed formats</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking -->
+      <section id="booking" class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header reveal">
+            <h2>Booking & Availability</h2>
+            <p>
+              Ready to start a project? Use the form below to request a slot. Once we’ve confirmed details,
+              I’ll send you a link to upload stems and we’ll lock in timelines. If you’re interested in
+              the free/discounted portfolio-building offer, mention it in your message.
+            </p>
+          </div>
+
+          <div class="booking-layout">
+            <div class="booking-card reveal">
+              <h3>Project request</h3>
+              <form class="booking-form">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="booking-name">Name</label>
+                    <input id="booking-name" type="text" placeholder="Your name" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="booking-email">Email</label>
+                    <input id="booking-email" type="email" placeholder="you@example.com" required />
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="booking-type">Project type</label>
+                  <select id="booking-type" required>
+                    <option value="">Choose one…</option>
+                    <option value="mix">Mixing</option>
+                    <option value="master">Mastering</option>
+                    <option value="live">Live gig mix</option>
+                    <option value="production">Production / remix</option>
+                    <option value="other">Other / not sure</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="booking-date">Ideal delivery timeframe</label>
+                  <input id="booking-date" type="text" placeholder="e.g. 3–4 weeks, flexible" />
+                </div>
+
+                <div class="form-field">
+                  <label for="booking-notes">Project notes</label>
+                  <textarea
+                    id="booking-notes"
+                    rows="4"
+                    placeholder="Tell me about your project, references, and where you plan to release it. Mention if you’re interested in the portfolio-building offer."
+                  ></textarea>
+                </div>
+
+                <p class="form-helper">
+                  This form doesn’t book you automatically – it starts the conversation.
+                  I’ll reply by email to confirm details and timelines.
+                </p>
+
+                <button type="submit" class="button button-primary button-full">
+                  <i class="fa-regular fa-paper-plane"></i>
+                  Send booking request
+                </button>
+              </form>
+            </div>
+
+            <div class="booking-sidebar reveal">
+              <div class="booking-info-card">
+                <h3>Calendar & scheduling</h3>
+                <p>
+                  Once you’ve sent a request, I’ll send you a booking link so you can
+                  choose a time for a call or feedback session that works for you.
+                </p>
+                <p class="note">
+                  In future, you can embed Calendly or a similar booking tool directly here.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="section-inner contact-inner">
+          <div class="contact-text reveal">
+            <h2>Contact</h2>
+            <p>
+              Whether you’ve got a full live show, a single track, or an idea that needs
+              turning into a record, I’d love to hear about it.
+            </p>
+            <p>
+              Email:
+              <a href="mailto:contact.ethanhardmanaudio@gmail.com">contact.ethanhardmanaudio@gmail.com</a>
+              <br />
+              Instagram:
+              <a href="https://instagram.com/ethanhaudio">@ethanhaudio</a>
+              <br />
+              Location: Bury / West Yorkshire, UK (remote worldwide)
+            </p>
+            <div class="socials-icons contact-socials">
+              <a href="https://instagram.com/ethanhaudio" class="social-icon" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="SoundCloud" title="Coming soon">
+                <i class="fa-brands fa-soundcloud"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Spotify" title="Coming soon">
+                <i class="fa-brands fa-spotify"></i>
+              </a>
+              <a
+                href="mailto:contact.ethanhardmanaudio@gmail.com"
+                class="social-icon"
+                aria-label="Email"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-card reveal">
+            <form
+              class="contact-form"
+              action="mailto:contact.ethanhardmanaudio@gmail.com"
+              method="post"
+              enctype="text/plain"
+            >
+              <div class="form-field">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="form-field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-field">
+                <label for="contact-message">Message</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="4"
+                  placeholder="Tell me a bit about your project…"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="button button-primary button-full">
+                <i class="fa-regular fa-paper-plane"></i>
+                Send message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Ethan Hardman. Mixing & Mastering Engineer.</p>
+        <p class="footer-meta">
+          Built with Ableton, trumpet and too many FabFilter instances.
+        </p>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
