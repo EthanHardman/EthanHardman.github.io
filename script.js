@@ -1,89 +1,149 @@
-// Set current year in footer
-document.getElementById("year").textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const body = document.body;
+  const navLinks = document.querySelectorAll(".nav-link");
 
-// Mobile nav toggle
-const navToggle = document.querySelector(".nav-toggle");
-const navDrawer = document.querySelector(".nav-drawer");
+  // Mobile nav toggle
+  if (navToggle) {
+    navToggle.addEventListener("click", () => {
+      body.classList.toggle("nav-open");
+    });
+  }
 
-if (navToggle && navDrawer) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = navDrawer.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-    const iconUse = navToggle.querySelector("use");
-    if (iconUse) {
-      iconUse.setAttribute("href", isOpen ? "#icon-close" : "#icon-menu");
-    }
-  });
-
-  // Close drawer when clicking a link
-  navDrawer.querySelectorAll("a").forEach((link) => {
+  // Close nav when clicking a link (on mobile)
+  navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      navDrawer.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-      const iconUse = navToggle.querySelector("use");
-      if (iconUse) iconUse.setAttribute("href", "#icon-menu");
+      if (body.classList.contains("nav-open")) {
+        body.classList.remove("nav-open");
+      }
     });
   });
-}
 
-// Helper: smooth scroll to section id
-function scrollToSection(id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+  // Scroll-based reveal animations (repeat on every enter/leave)
+  const revealElements = document.querySelectorAll(".reveal");
 
-// Handle nav / buttons with data-section-link
-document.querySelectorAll("[data-section-link]").forEach((el) => {
-  el.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target = el.getAttribute("data-section-link");
-    if (!target) return;
-
-    // For portfolio: also expand extra content when navigating via nav/hero
-    if (target === "portfolio") {
-      const extra = document.getElementById("portfolio-extra");
-      const toggleBtn = document.getElementById("portfolio-toggle");
-      if (extra && toggleBtn && extra.hidden) {
-        extra.hidden = false;
-        toggleBtn.textContent = "Show less";
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.1,
       }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+  } else {
+    // Fallback: just show everything
+    revealElements.forEach((el) => el.classList.add("visible"));
+  }
+
+  // Portfolio "Have a listen" expanding detail
+  const detailWrapper = document.getElementById("portfolio-detail-wrapper");
+  const detailPanels = document.querySelectorAll(".portfolio-detail");
+  const listenButtons = document.querySelectorAll(".listen-button");
+  const closeButtons = document.querySelectorAll(".portfolio-detail-close");
+
+  const openProjectDetail = (projectId) => {
+    if (!detailWrapper) return;
+
+    // Mark wrapper as open
+    detailWrapper.classList.add("open");
+
+    // Activate the matching panel
+    detailPanels.forEach((panel) => {
+      if (panel.dataset.projectDetail === projectId) {
+        panel.classList.add("active");
+      } else {
+        panel.classList.remove("active");
+      }
+    });
+
+    // Smooth scroll to the detail area
+    const rect = detailWrapper.getBoundingClientRect();
+    const offsetTop = rect.top + window.pageYOffset - 72; // account for sticky header
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  };
+
+  const closeProjectDetail = () => {
+    if (!detailWrapper) return;
+
+    const portfolioSection = document.getElementById("portfolio");
+    if (portfolioSection) {
+      const rect = portfolioSection.getBoundingClientRect();
+      const offsetTop = rect.top + window.pageYOffset - 72; // sticky header
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
     }
 
-    scrollToSection(target);
+    // Give the scroll a moment to start, then hide
+    setTimeout(() => {
+      detailWrapper.classList.remove("open");
+      detailPanels.forEach((panel) => panel.classList.remove("active"));
+    }, 400);
+  };
+
+  listenButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const projectId = btn.dataset.project;
+      if (projectId) {
+        openProjectDetail(projectId);
+      }
+    });
   });
+
+  closeButtons.forEach((btn) => {
+    btn.addEventListener("click", closeProjectDetail);
+  });
+
+  // Set current year in footer
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  // Smooth scroll for internal anchor links
+  const internalLinks = document.querySelectorAll('a[href^="#"]');
+  internalLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("href").slice(1);
+      const targetEl = document.getElementById(targetId);
+
+      if (targetEl) {
+        e.preventDefault();
+        const rect = targetEl.getBoundingClientRect();
+        const offsetTop = rect.top + window.pageYOffset - 72; // sticky header
+
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  // Basic client-side handling of booking form (no backend yet)
+  const bookingForm = document.querySelector(".booking-form");
+  if (bookingForm) {
+    bookingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert(
+        "Thanks for your booking request! This demo form doesn’t send yet, but you can connect it to a service (Formspree, Netlify Forms, etc.) when you’re ready."
+      );
+    });
+  }
 });
-
-// Portfolio "See more / Show less" toggle
-const portfolioToggle = document.getElementById("portfolio-toggle");
-const portfolioExtra = document.getElementById("portfolio-extra");
-
-if (portfolioToggle && portfolioExtra) {
-  portfolioToggle.addEventListener("click", () => {
-    const isHidden = portfolioExtra.hidden;
-    portfolioExtra.hidden = !isHidden;
-    portfolioToggle.textContent = isHidden ? "Show less" : "See more";
-  });
-}
-
-// Scroll reveal animations
-const revealEls = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.18 }
-  );
-
-  revealEls.forEach((el) => observer.observe(el));
-} else {
-  // Fallback: just show everything
-  revealEls.forEach((el) => el.classList.add("is-visible"));
-}
