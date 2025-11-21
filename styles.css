@@ -1048,3 +1048,27 @@ textarea:focus {
     padding-bottom: 5rem;
   }
 }
+/* --- Top social strip, large purple icons --- */
+
+.socials-strip {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.social-icons-large {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.social-icons-large .icon-link i {
+  font-size: 2.4rem; /* make bigger if you want more impact */
+  color: var(--accent); /* your #9900ff */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.9;
+}
+
+.social-icons-large .icon-link:hover i {
+  transform: scale(1.18);
+  opacity: 1;
+}
